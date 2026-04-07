@@ -19,32 +19,32 @@ include '../includes/header.php';
         <form method="POST" action="../actions/salvar.php" class="row g-3">
           <div class="col-md-6">
             <label class="form-label">Nome</label>
-            <input type="text" class="form-control" name="nome" required>
+            <input type="text" class="form-control" name="nome" >
           </div>
 
           <div class="col-md-6">
             <label class="form-label">Email</label>
-            <input type="email" class="form-control" name="email" required>
+            <input type="email" class="form-control" name="email" >
           </div>
 
           <div class="col-md-4">
             <label class="form-label">Telefone</label>
-            <input type="text" class="form-control" name="telefone" required>
+            <input type="text" class="form-control" name="telefone" >
           </div>
 
           <div class="col-md-2">
             <label class="form-label">Idade</label>
-            <input type="number" class="form-control" min="1" name="idade" required>
+            <input type="number" class="form-control" min="1" name="idade" >
           </div>
 
           <div class="col-md-3">
             <label class="form-label">Cidade</label>
-            <input type="text" class="form-control" name="cidade" required>
+            <input type="text" class="form-control" name="cidade" >
           </div>
 
           <div class="col-md-3">
             <label class="form-label">Curso</label>
-            <input type="text" class="form-control" name="curso" required>
+            <input type="text" class="form-control" name="curso" >
           </div>
 
           <div class="col-12 d-flex gap-2">
