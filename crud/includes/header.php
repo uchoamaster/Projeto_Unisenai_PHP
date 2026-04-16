@@ -55,6 +55,11 @@ if (!isset($activePage)) {
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link <?php echo $activePage === 'notas' ? 'active' : ''; ?>" href="notas_index.php">
+              <i class="bi bi-mortarboard me-1"></i>Notas
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link <?php echo $activePage === 'aprendizado' ? 'active' : ''; ?>" href="aprendizado.php">
               <i class="bi bi-journal-code me-1"></i>Aprendizado
             </a>
