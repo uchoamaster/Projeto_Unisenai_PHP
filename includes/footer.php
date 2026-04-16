@@ -1,4 +1,5 @@
 
+  </div>
 <footer class="border-top bg-white py-3 mt-4">
     <div class="container text-center text-muted small">
         Projeto UniSenai PHP - <?php echo date('Y'); ?>
