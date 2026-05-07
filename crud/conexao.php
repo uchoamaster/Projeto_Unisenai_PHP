@@ -8,7 +8,7 @@
 
 // mysqli_connect(host, usuario, senha, banco)
 // Ajuste estes dados de acordo com o seu ambiente local.
-$conn = mysqli_connect("localhost", "root", "", "crud_simples");
+$conn = mysqli_connect("localhost", "root", "root", "crud_simples");
 
 // Em aula, voce pode descomentar este bloco para testar erro de conexao.
 // if (!$conn) {
