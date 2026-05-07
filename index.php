@@ -6,7 +6,19 @@ $pageTitle = "Usuários Cadastrados";
 
 //inclui no topo da pagina (HTML Inicial + navbar)
 include 'includes/header.php';
+
+$status = $_GET['status'] ?? '';
+$msg = $_GET['msg'] ?? '';
+$canManage = is_user_logged_in();
 ?>
+
+<?php if ($msg !== ''): ?>
+  <?php $isSuccess = $status === 'success'; ?>
+  <div class="alert <?php echo $isSuccess ? 'alert-success' : 'alert-danger'; ?> alert-dismissible fade show" role="alert">
+    <?php echo htmlspecialchars($msg, ENT_QUOTES, 'UTF-8'); ?>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+  </div>
+<?php endif; ?>
 
 <div class="d-flex align-items-center justify-content-between mb-3">
 <h2 class="mb-0">Usuários</h2>
@@ -35,6 +47,15 @@ include 'includes/header.php';
 $res = mysqli_query($conn, "SELECT * FROM usuarios");
 
 while ($r = mysqli_fetch_assoc($res)){
+  $acoesHtml = "<span class='badge bg-secondary'>Somente leitura</span>";
+
+  if ($canManage) {
+    $acoesHtml = "
+      <a href='editar.php?id={$r['id']}'><i class='bi bi-pencil'></i></a> |
+      <a href='deletar.php?id={$r['id']}' onclick='return confirm(\"Tem certeza que deseja excluir?\")'><i class='bi bi-trash3'></i></a>
+    ";
+  }
+
   echo "<tr>
     <td>{$r['nome']}</td>
     <td>{$r['email']}</td>
@@ -42,10 +63,7 @@ while ($r = mysqli_fetch_assoc($res)){
     <td>{$r['idade']}</td>
     <td>{$r['cidade']}</td>
     <td>{$r['curso']}</td>
-    <td>
-      <a href='editar.php?id={$r['id']}'><i class='bi bi-pencil'></i></a> |
-      <a href='deletar.php?id={$r['id']}' onclick='return confirm(\"Tem certeza que deseja excluir?\")'><i class='bi bi-trash3'></i></a>
-    </td>
+    <td>{$acoesHtml}</td>
   </tr>";
 }
 ?>

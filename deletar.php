@@ -1,5 +1,8 @@
 <?php
 include 'conexao.php';
+include_once 'auth.php';
+
+require_login('index.php');
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];

@@ -1,5 +1,8 @@
 <?php
 include 'conexao.php';
+include_once 'auth.php';
+
+require_login('index.php');
 
 //Variavel usada no <title> da pagina ( header.php)
 $pageTitle = "Edição de Usuário";

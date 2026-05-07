@@ -65,6 +65,29 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuarios_login`
+--
+
+CREATE TABLE `usuarios_login` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(120) NOT NULL,
+  `email` varchar(120) NOT NULL,
+  `senha_hash` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_usuarios_login_email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `usuarios_login`
+--
+
+INSERT INTO `usuarios_login` (`id`, `nome`, `email`, `senha_hash`) VALUES
+(1, 'Administrador', 'admin@admin.com', '$2y$10$XTX8KEQZ3iCDgE8gBmkIjesgDxw0cRmyPR1J012ZEC/8H4jepwmg6');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
