@@ -24,14 +24,9 @@ $canManage = is_user_logged_in();
 <div class="d-flex align-items-center justify-content-between mb-3">
 <h2 class="mb-0">Usuários</h2>
 
-  <div class="d-flex gap-2">
-    <a href="form.php" class="btn btn-success">
-      <i class="bi bi-plus-circle me-1"></i>Novo
-    </a>
-    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#cadastroUsuarioModal">
-      <i class="bi bi-window-plus me-1"></i>Novo (Modal)
-    </button>
-  </div>
+  <a href="form.php" class="btn btn-success"> 
+  <i class="bi bi-plus-circle me-1">Novo</i>
+  </a>
 </div>
 
 <form method="GET" action="index.php" class="row g-2 mb-3">
@@ -146,55 +141,6 @@ if (isset($stmt)) {
   </tbody>
 
 </table>
-
-<div class="modal fade" id="cadastroUsuarioModal" tabindex="-1" aria-labelledby="cadastroUsuarioModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="cadastroUsuarioModalLabel">
-          <i class="bi bi-person-plus me-1"></i>Novo usuário (modal)
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-      </div>
-      <form method="POST" action="salvar.php" id="cadastroUsuarioFormModal">
-        <div class="modal-body">
-          <div class="row g-3">
-            <div class="col-12">
-              <label for="modal_nome" class="form-label">Nome</label>
-              <input type="text" id="modal_nome" name="nome" class="form-control" required>
-            </div>
-            <div class="col-12 col-md-6">
-              <label for="modal_email" class="form-label">Email</label>
-              <input type="email" id="modal_email" name="email" class="form-control" required>
-            </div>
-            <div class="col-12 col-md-6">
-              <label for="modal_telefone" class="form-label">Telefone</label>
-              <input type="text" id="modal_telefone" name="telefone" class="form-control" required>
-            </div>
-            <div class="col-12 col-md-4">
-              <label for="modal_idade" class="form-label">Idade</label>
-              <input type="number" id="modal_idade" name="idade" class="form-control" min="1" required>
-            </div>
-            <div class="col-12 col-md-4">
-              <label for="modal_cidade" class="form-label">Cidade</label>
-              <input type="text" id="modal_cidade" name="cidade" class="form-control" required>
-            </div>
-            <div class="col-12 col-md-4">
-              <label for="modal_curso" class="form-label">Curso</label>
-              <input type="text" id="modal_curso" name="curso" class="form-control" required>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn btn-primary">
-            <i class="bi bi-check2-circle me-1"></i>Salvar usuário
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
 
 <script>
   (function () {
