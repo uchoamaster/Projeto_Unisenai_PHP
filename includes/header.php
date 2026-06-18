@@ -33,6 +33,9 @@ if (!isset($pageTitle)) {
                     <li class="nav-item">
                         <a class="nav-link" href="index.php">Usuarios</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="relatorios.php">Relatorios</a>
+                    </li>
 
                     <?php if (is_user_logged_in()): ?>
                         <li class="nav-item">
